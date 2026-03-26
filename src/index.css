@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #0b0b0f;
+  --surface: #14151b;
+  --card: #1c1d24;
+
+  --text: #e5e7eb;
+  --text-muted: #9ca3af;
+  --text-h: #ffffff;
+
+  --accent: #f5c518; /* GOLD */
+  --accent-bg: rgba(245, 197, 24, 0.1);
+  --accent-border: rgba(245, 197, 24, 0.5);
+
+  --border: #2e303a;
+
+  --shadow: rgba(0, 0, 0, 0.5) 0 10px 20px, rgba(0, 0, 0, 0.3) 0 6px 10px;
+
+  --overlay: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.2));
+
+  font:
+    18px/145% system-ui,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+@layer base {
+  body {
+    background: var(--bg);
+    color: var(--text);
+    height: 100vh;
+    font:
+      18px/145% system-ui,
+      "Segoe UI",
+      Roboto,
+      sans-serif;
+  }
+
+  h1 {
+    @apply text-3xl font-bold;
+    color: var(--text-h);
+  }
+  h2 {
+    @apply text-lg font-bold;
+    color: var(--text-h);
+  }
+  h3 {
+    @apply text-base font-bold;
+    color: var(--text-h);
+  }
+  span {
+    color: var(--accent);
+  }
+}
+
+@layer components {
+  .nav {
+    @apply flex items-center justify-between px-6 py-4 border-b fixed top-0 left-0 z-[100] w-full;
+    background: var(--surface);
+    border-color: var(--border);
+  }
+  .nav-link {
+    @apply transition duration-300;
+    color: var(--text);
+  }
+  .nav-link-active {
+    @apply font-semibold;
+    color: var(--accent);
+  }
+
+  .card {
+    @apply rounded-xl shadow-lg overflow-hidden;
+    background: var(--card);
+    border: 1px solid var(--border);
+  }
+
+  .card-body {
+    @apply p-4;
+  }
+
+  .button {
+    @apply px-4 py-2 rounded-lg transition;
+    background: var(--accent);
+    color: white;
+  }
+  .button:hover {
+    @apply opacity-80;
+  }
+  .form-input {
+    @apply border px-4 py-2 rounded-lg transition w-full mt-5;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+}
+
+@layer utilities {
+  .text-muted {
+    color: var(--text);
+  }
+
+  .text-heading {
+    color: var(--text-h);
+  }
+}
