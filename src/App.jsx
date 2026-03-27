@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Favorites from "./pages/Favorites";
+import MovieDetails from "./pages/MovieDetails";
 import { Routes, Route } from "react-router-dom";
 function App() {
   return (
@@ -8,7 +9,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<Favorites />} />
+        <Route path="/favorites" element={<Favorites />} />
+        <Route path="/movie/:id" element={<MovieDetails />} />
       </Routes>
       
     </>

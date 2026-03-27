@@ -82,10 +82,16 @@
     @apply p-4;
   }
 
+  .year {
+  background: linear-gradient(90deg, #f5c518, #ff8c00);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+}
+
   .button {
-    @apply px-4 py-2 rounded-lg transition;
-    background: var(--accent);
-    color: white;
+    @apply px-2 py-1 text-sm rounded-md bg-white/10 text-white border border-white/10;
   }
   .button:hover {
     @apply opacity-80;
